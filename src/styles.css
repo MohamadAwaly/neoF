@@ -1,12 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; // permet de prendre le padding et le marging comme etant une partie integrante de la tailel d'une element en html donc ils seront compris dans la taille total de l'element
+  box-sizing: border-box;
 }
 
 ul {
@@ -23,7 +28,7 @@ a {
 }
 
 input {
-  border : 1px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 3px;
   padding: 8px 15px;
 }
@@ -38,9 +43,8 @@ button:disabled {
   cursor: not-allowed;
 }
 
-// delcarer des variables et on va pouvoir les utilisée dans le reste de l'application
 :root {
-  --font-family: 'Roboto', sans-serif;
+  --font-family: "Roboto", sans-serif;
   --primary: #40739e;
   --secondary: #e1b12c;
   --body: #303030;
@@ -48,6 +52,7 @@ button:disabled {
   --lightgray: #ddd;
   --text-regular: #444;
 }
+
 h2 {
   color: var(--accent);
 }
@@ -57,15 +62,6 @@ body {
   font-family: var(--font-family);
   color: var(--text-regular);
 }
-
-// layout
-
-//.container {
-//  max-width: 1200px;
-//  display: block;
-//  margin: auto;
-//  padding: 20px;
-//}
 
 .d-flex {
   display: flex;
@@ -91,7 +87,6 @@ body {
   align-items: center;
 }
 
-// prob
 .flex-align-items-between {
   align-items: center;
 }
@@ -104,7 +99,6 @@ body {
   flex: 1 1 50%;
 }
 
-// util
 .p-10 {
   padding: 10px;
 }
@@ -151,8 +145,6 @@ body {
   color: white;
 }
 
-//debug
-
 .d1 {
   border: 1px solid red;
 }
@@ -161,37 +153,28 @@ body {
   border: 1px solid green;
 }
 
-//theme
-
-.list-primary-action {
-  li {
-    &:hover {
-      background-color: var(--primary);
-      color: white;
-    }
-
-    transition: background-color 0.4S;
-  }
+.list-primary-action li {
+  transition: background-color 0.4S;
+}
+.list-primary-action li:hover {
+  background-color: var(--primary);
+  color: white;
 }
 
-.list-primary {
-  li {
-    padding: 10px 15px;
-    border: 1px solid var(--lightgray);
-    border-top: 0;
-    cursor: pointer;
-  }
-
-  li:first-child {
-    border-top: 1px solid var(--lightgray);
-    border-top-left-radius: 3px;
-    border-top-right-radius: 2px;
-  }
-
-  li:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-  }
+.list-primary li {
+  padding: 10px 15px;
+  border: 1px solid var(--lightgray);
+  border-top: 0;
+  cursor: pointer;
+}
+.list-primary li:first-child {
+  border-top: 1px solid var(--lightgray);
+  border-top-left-radius: 3px;
+  border-top-right-radius: 2px;
+}
+.list-primary li:last-child {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
 }
 
 .btn {
@@ -201,22 +184,17 @@ body {
   border-radius: 3px;
   font-weight: 700;
   cursor: pointer;
-  &-secondary {
-    background-color: #ddd;
-  }
-  &-primary {
-    background-color: var(--primary);
-    color: white;
-
-    &:hover {
-      background-color: var(--secondary);
-    }
-
-    transition: background-color 0.4s;
-  }
+}
+.btn-secondary {
+  background-color: #ddd;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  transition: background-color 0.4s;
+}
+.btn-primary:hover {
+  background-color: var(--secondary);
 }
 
-.mat-toolbar {
-  //background-color: var(--primary);
-  //color: var(--lightgray);
-}
+/*# sourceMappingURL=styles.css.map */
