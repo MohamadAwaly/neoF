@@ -1,0 +1,15 @@
+.mat-sidenav-container {
+  height: 93vh;
+  border-top: #ff00ff solid 2px;
+}
+.mat-sidenav-container mat-sidenav {
+  width: auto;
+}
+.mat-sidenav-container mat-sidenav mat-list-item {
+  color: var(--lightgray);
+}
+.mat-sidenav-container mat-sidenav mat-list-item:hover {
+  background-color: var(--secondary);
+}
+
+/*# sourceMappingURL=sid-nav.component.css.map */
