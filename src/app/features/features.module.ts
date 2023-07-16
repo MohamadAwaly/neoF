@@ -11,6 +11,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule} from "@angular/router";
 import {FEATURES_ROUTES} from "./features.routes";
 import {MaterialModule} from "../shared/modules/material.module";
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -24,9 +25,14 @@ import {MaterialModule} from "../shared/modules/material.module";
     NewEmployeComponent,
     UpdateEmployeComponent,
     DeleteEmployeComponent,
+    RegisterComponent,
+  ],
+  exports: [
+    HeaderComponent,
+    FeaturesComponent
   ],
   imports: [
-    MaterialModule,
+    // MaterialModule,
     MaterialModule,
     RouterModule.forChild(FEATURES_ROUTES),
 
