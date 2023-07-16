@@ -1,0 +1,95 @@
+{
+  "name": "neo",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "generators": {
+    "@schematics/angular:application": {
+      "strict": true
+    }
+  },
+  "sourceRoot": "apps/neo/src",
+  "prefix": "app",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/apps/neo",
+        "index": "apps/neo/src/index.html",
+        "main": "apps/neo/src/main.ts",
+        "polyfills": "apps/neo/src/polyfills.ts",
+        "tsConfig": "apps/neo/tsconfig.app.json",
+        "assets": ["apps/neo/src/favicon.ico", "apps/neo/src/assets"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+          "apps/neo/src/styles.scss"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/neo/src/environments/environment.ts",
+              "with": "apps/neo/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "neo:build:production"
+        },
+        "development": {
+          "browserTarget": "neo:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "neo:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "main": "apps/neo/src/test.ts",
+        "polyfills": "apps/neo/src/polyfills.ts",
+        "tsConfig": "apps/neo/tsconfig.spec.json",
+        "karmaConfig": "apps/neo/karma.conf.js",
+        "assets": ["apps/neo/src/favicon.ico", "apps/neo/src/assets"],
+        "styles": [
+          "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.scss",
+          "apps/neo/src/styles.scss"
+        ],
+        "scripts": []
+      }
+    }
+  }
+}

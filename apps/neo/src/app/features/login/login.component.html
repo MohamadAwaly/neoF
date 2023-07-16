@@ -1,0 +1,48 @@
+<div
+  class="containerr d-flex flex-justify-content-center flex-align-items-center"
+>
+  <mat-card>
+    <mat-card-header>
+      <h1><img src="assets/images/Logov1.png" /></h1>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-label>username</mat-label>
+          <input
+            matInput
+            placeholder="username"
+            name="username"
+            formControlName="username"
+          />
+          <mat-error *ngIf="username.touched && username.hasError('required')"
+            >Username is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>username</mat-label>
+          <input
+            matInput
+            placeholder="password"
+            name="password"
+            type="password"
+            formControlName="password"
+          />
+          <mat-error *ngIf="password.touched && password.hasError('required')"
+            >Password is required</mat-error
+          >
+        </mat-form-field>
+
+        <button
+          id="btn-login"
+          mat-raised-button
+          color="primary"
+          (click)="login()"
+        >
+          Login
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
